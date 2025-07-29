@@ -14,8 +14,9 @@ learning_rate_G = 1e-4
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print("Device:",device)
 
-path_target = 'data/targets'
-path_input = 'data/inputs'
+root_dir = os.path.abspath(os.path.join(os.path.dirname(__file__)))
+path_target = os.path.join(root_dir,'data/targets')
+path_input = os.path.join(root_dir,'data/inputs')
 test_ratio, train_ratio = 0.2, 0.8
 rand_seed = 42
 img_size = (64, 64)
